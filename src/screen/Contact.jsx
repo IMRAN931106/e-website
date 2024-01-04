@@ -4,7 +4,9 @@ const Contact = () => {
   const Wrapper = styled.section`
     padding: 9rem 0 5rem 0;
     text-align: center;
-
+.ifream-map {
+  height:40vh;
+}
     .container {
       margin-top: 6rem;
 
@@ -45,6 +47,7 @@ const Contact = () => {
         allowFullScreen=""
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
+        className="ifream-map"
       ></iframe>
 
       <div className="container">
