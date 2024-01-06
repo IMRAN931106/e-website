@@ -28,7 +28,7 @@ const HeroSection = ({ myData }) => {
             <figure>
               <img
                 src={require("../Assets/hero.jpg")}
-                alt="hero-section-photo"
+                alt=""
                 className="img-style"
               />
             </figure>

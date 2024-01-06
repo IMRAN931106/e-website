@@ -1,6 +1,6 @@
 import { HeroSection, Services, Trusted, FeatureProduct } from '../Components';
 
-const Home_1 = () => {
+const Home1 = () => {
 
   const data = {
     name: "Imran Store",
@@ -16,4 +16,4 @@ const Home_1 = () => {
   )
 }
 
-export default Home_1
+export default Home1

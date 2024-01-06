@@ -5,7 +5,7 @@ import {
   About,
   Cart,
   Contact,
-  Home_1,
+  Home1,
   NotFoundNerror,
   Products,
   SingleProducts,
@@ -13,7 +13,7 @@ import {
 import { GlobalStyle } from "./GlobalStyle";
 import { ThemeProvider } from "styled-components";
 import { Footer, Header } from "./Components";
-import { AppProvider } from "./Context/ProductContaxt";
+// import { AppProvider } from "./Context/ProductContaxt";
 
 function App() {
   const theme = {
@@ -40,13 +40,14 @@ function App() {
     },
   };
   return (
-    <AppProvider>
+    // <AppProvider>
       <ThemeProvider theme={theme}>
         <Router>
-          <GlobalStyle />
+         
           <Header />
+           <GlobalStyle />
           <Routes>
-            <Route path="/" element={<Home_1 />}></Route>
+            <Route path="/" element={<Home1 />}></Route>
             <Route path="/about" element={<About />}></Route>
             <Route path="/products" element={<Products />}></Route>
             <Route path="/contact" element={<Contact />}></Route>
@@ -60,7 +61,7 @@ function App() {
           <Footer />
         </Router>
       </ThemeProvider>
-    </AppProvider>
+    // </AppProvider>
   );
 }
 
