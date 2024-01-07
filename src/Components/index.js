@@ -14,3 +14,5 @@ export {default as CartAmountToggle} from './CartAmountToggle';
 export {default as FilterSection} from './FilterSection';
 export {default as Sort} from './Sort';
 export {default as ProductList} from './ProductList';
+export {default as GridView} from './GridView';
+export {default as ListView} from './ListView';

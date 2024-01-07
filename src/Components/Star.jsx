@@ -4,7 +4,9 @@ import styled from "styled-components";
 
 const Star = ({ stars, reviews }) => {
   const ratingStar = Array.from({ length: 5 }, (_, index) => {  // _ its basically use for blank
+    
     let number = index + 0.5;
+    
     debugger; // use for debugging
     return (
       <span key={index}>
