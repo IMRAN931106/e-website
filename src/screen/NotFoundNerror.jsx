@@ -1,8 +1,27 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { Button } from "../styles/Button";
+import { useProductContext } from "../Context/ProductContaxt";
+import { HashLoader } from "react-spinners";
 
 const NotFoundNerror = () => {
+  const { isLoading} = useProductContext();
+
+  if (isLoading) {
+    return (
+      <HashLoader
+        color="#CDCBCF"
+        size={70}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+          width: "100vw",
+        }}
+      />
+    );
+  }
   return (
     <Wrapper>
       <div className="container">

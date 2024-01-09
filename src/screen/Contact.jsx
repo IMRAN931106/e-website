@@ -1,6 +1,27 @@
 import styled from "styled-components";
+import { useProductContext } from "../Context/ProductContaxt";
+import { HashLoader } from "react-spinners";
 
 const Contact = () => {
+
+  const { isLoading } = useProductContext();
+
+  if (isLoading) {
+    return (
+      <HashLoader
+        color="#CDCBCF"
+        size={70}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+          width: "100vw",
+        }}
+      />
+    );
+  }
+
   const Wrapper = styled.section`
     padding: 9rem 0 5rem 0;
     text-align: center;

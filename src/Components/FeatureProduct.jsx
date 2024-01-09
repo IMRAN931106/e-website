@@ -7,7 +7,7 @@ const FeatureProduct = () => {
   const { isLoading, featureProducts } = useProductContext();
 
   if (isLoading) {
-    return <SyncLoader color="#d69b36" margin={5} size={20} style={{ textAlign: "center" , display: 'block'}}/>;
+    return <SyncLoader color="#CDCBCF" margin={5} size={20} style={{ textAlign: "center" , display: 'block'}}/>;
   }
 
   return (
