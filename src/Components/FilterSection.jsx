@@ -6,14 +6,7 @@ import { Button } from "../styles/Button";
 
 const FilterSection = () => {
   const {
-    filters: { 
-      text, 
-      category, 
-      color,
-      price,
-       maxPrice, 
-       minPrice 
-    },
+    filters: { text, category, color, price, maxPrice, minPrice },
     updateFilterValue,
     all_products,
     clearFilters,
@@ -25,15 +18,14 @@ const FilterSection = () => {
     let newVal = data.map((curElem) => {
       return curElem[attr];
     });
-  
 
     if (attr === "colors") {
-      // return (newVal = ["All", ...new Set([].concat(...newVal))]); 
+      // return (newVal = ["All", ...new Set([].concat(...newVal))]);
       newVal = newVal.flat();
     }
 
     return (newVal = ["all", ...new Set(newVal)]);
-      // console.log('first', newVal)
+    // console.log('first', newVal)
   };
 
   // we need to have the individual data of each in an array format
@@ -61,7 +53,7 @@ const FilterSection = () => {
         </form>
       </div>
 
-       <div className="filter-category">
+      <div className="filter-category">
         <h3>Category</h3>
         <div>
           {categoryData.map((curElem, index) => {
@@ -72,7 +64,8 @@ const FilterSection = () => {
                 name="category"
                 value={curElem}
                 className={curElem === category ? "active" : ""}
-                onClick={updateFilterValue}>
+                onClick={updateFilterValue}
+              >
                 {curElem}
               </button>
             );
@@ -88,10 +81,11 @@ const FilterSection = () => {
             name="company"
             id="company"
             className="filter-company--select"
-            onClick={updateFilterValue}>
+            onClick={updateFilterValue}
+          >
             {companyData.map((curElem, index) => {
               return (
-                <option key={index} value={curElem} name="company"> 
+                <option key={index} value={curElem} name="company">
                   {curElem}
                 </option> // name value get in api
               );
@@ -113,7 +107,8 @@ const FilterSection = () => {
                   value={curColor}
                   name="color"
                   className="color-all--style"
-                  onClick={updateFilterValue}>
+                  onClick={updateFilterValue}
+                >
                   all
                 </button>
               );
@@ -126,13 +121,14 @@ const FilterSection = () => {
                 name="color"
                 style={{ backgroundColor: curColor }}
                 className={color === curColor ? "btnStyle active" : "btnStyle"}
-                onClick={updateFilterValue}>
+                onClick={updateFilterValue}
+              >
                 {color === curColor ? <FaCheck className="checkStyle" /> : null}
               </button>
             );
           })}
         </div>
-      </div> 
+      </div>
 
       <div className="filter_price">
         <h3>Price</h3>
@@ -147,14 +143,13 @@ const FilterSection = () => {
           value={price}
           onChange={updateFilterValue}
         />
-        </div>
+      </div>
 
-        <div className="filter-clear">
+      <div className="filter-clear">
         <Button className="btn" onClick={clearFilters}>
           Clear Filters
         </Button>
       </div>
-
     </Wrapper>
   );
 };
