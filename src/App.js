@@ -39,6 +39,7 @@ function App() {
       tab: "998px",
     },
   };
+  // don't repet code its a rule of coding 
   return (
     // <AppProvider>
       <ThemeProvider theme={theme}>
@@ -48,6 +49,8 @@ function App() {
            <GlobalStyle />
           <Routes>
             <Route path="/" element={<Home1 />}></Route>
+            {/* ===========repet code ======== */}
+            <Route path="/Store" element={<Home1 />}></Route>
             <Route path="/about" element={<About />}></Route>
             <Route path="/products" element={<Products />}></Route>
             <Route path="/contact" element={<Contact />}></Route>
