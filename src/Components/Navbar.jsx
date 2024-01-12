@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { BsCart3, BsTextRight, BsXLg } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
+import { useCartContext } from "../Context/cart_context";
 
 const Navbar = () => {
+  const { total_item } = useCartContext();
   const [menuIcon, setMenuIcon] = useState();
   const [menu, setMenu] = useState("home");
 
-  const Nav = styled.nav`
+
+  const StyledNav = styled.nav`
     .navbar-lists {
       display: flex;
       gap: 4.8rem;
@@ -172,7 +175,7 @@ const Navbar = () => {
   `;
 
   return (
-    <Nav>
+    <StyledNav>
       <div className={menuIcon ? "navbar active" : "navbar"}>
         <ul className="navbar-lists">
           <li
@@ -234,7 +237,7 @@ const Navbar = () => {
               onClick={() => setMenuIcon(false)}
             >
               <BsCart3 className="cart-trolley" size={25} />
-              <span className="cart-total--item">10</span>
+              <span className="cart-total--item">{total_item}</span>
             </NavLink>
           </li>
         </ul>
@@ -255,7 +258,7 @@ const Navbar = () => {
           />
         </div>
       </div>
-    </Nav>
+    </StyledNav>
   );
 };
 

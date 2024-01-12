@@ -19,7 +19,7 @@ const HeroSection = ({ myData }) => {
              {/* { props.paragraph } */}
              {paragraph}
             </p>
-            <NavLink>
+            <NavLink to="/products">
               <Button>show now</Button>
             </NavLink>
           </div>

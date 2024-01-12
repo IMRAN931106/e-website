@@ -44,13 +44,13 @@ export const FilterContextProvider = ({ children }) => {
   const updateFilterValue = (event) => {
     let name = event.target.name;
     let value = event.target.value;
-
     return dispatch({ type: "UPDATE_FILTERS_VALUE", payload: { name, value } });
   };
 
   // to clear the filter
   const clearFilters = () => {
     dispatch({ type: "CLEAR_FILTERS" });
+    // console.log('first', dispatch)
   };
 
   // to sort the product

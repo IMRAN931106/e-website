@@ -36,7 +36,7 @@ const filterReducer = (state, action) => {
         ...state,
         filter_products: [...action.payload],
         all_products: [...action.payload],
-        filters: { ...state.filters, maxPrice, price: maxPrice },
+        filters: { ...state.filters, maxPrice: maxPrice, price: maxPrice },
       };
 
     case "SET_GRID_VIEW":
@@ -154,6 +154,7 @@ const filterReducer = (state, action) => {
           (curElem) => curElem.price <= price
         );
       }
+      // console.log('hello',price)
       return {
         ...state,
         filter_products: tempFilterProduct,
@@ -168,7 +169,7 @@ const filterReducer = (state, action) => {
           category: "all",
           company: "all",
           color: "all",
-          maxPrice: 0,
+          maxPrice: state.filters.maxPrice,
           price: state.filters.maxPrice,
           minPrice: state.filters.maxPrice,
         },
